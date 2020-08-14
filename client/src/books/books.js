@@ -3,9 +3,7 @@ import './books.css'
 
 import isNull from 'lodash/isNull'
 import cloneDeep from 'lodash/cloneDeep'
-
-// https://formik.org/
-// test
+import values from 'lodash/values'
 
 const emptyBook = {
     name: null,
@@ -19,11 +17,7 @@ class Books extends Component {
     constructor() {
         super();
         this.state = {
-            bookShelf: [
-                // { name: "Car hacker's handbook", author: "Smith Craig", page: 65, totalPages: 306 },
-                // { name: "Ascent of Money", author: "Niall Ferguson", page: 297, totalPages: 447 },
-                // { name: "Functional-Light JavaScript", author: "Kyle Simpson", page: 288, totalPages: 370 },
-            ],
+            bookShelf: [],
             newBook: emptyBook
         }
 
@@ -32,11 +26,11 @@ class Books extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // https://daveceddia.com/where-fetch-data-componentwillmount-vs-componentdidmount/
     componentDidMount() {
         fetch("/bookShelf")
             .then(res => res.json())
             .then(bookShelf => {
-                console.log("bookShelf", bookShelf)
                 this.setState({
                     ...this.state,
                     bookShelf
@@ -45,8 +39,6 @@ class Books extends Component {
     }
 
     handleChange(event) {
-        // console.log('Event is: ' + JSON.stringify(keys(event)));
-        // console.log('Event.target is: ' + JSON.stringify(keys(event.target)));
         const { name, value } = event.target
         this.setState({
             bookShelf: this.state.bookShelf,
@@ -59,28 +51,16 @@ class Books extends Component {
 
     handleSubmit(event) {
         // check if newBook is empty
-        const { name,
-            author,
-            page,
-            totalPages } = this.state.newBook
-
-        // console.log(this.state.newBook)
-        const cond = [name,
-            author,
-            page,
-            totalPages].some(isNull)
-
+        const cond = values(this.state.newBook).some(isNull)
         if (cond) {
             event.preventDefault();
-            return
+            return;
         }
 
         this.setState({
-            bookShelf: this.state.bookShelf.concat([cloneDeep(this.state.newBook)]),
+            bookShelf: this.state.bookShelf.concat([this.state.newBook]),
             newBook: emptyBook
         });
-        // console.log('A book has been added: ' + JSON.stringify(this.state.newBook));
-        console.log('State is: ' + JSON.stringify(this.state));
 
         // prevents default action
         event.preventDefault();
@@ -91,14 +71,13 @@ class Books extends Component {
 
     // https://reactjs.org/docs/forms.html
     render() {
-        // console.log('bookshelf: ', this.state.bookShelf)
         const bookShelf = this.state.bookShelf.map(({ name, author, page, totalPages }, i) => {
             return (<li key={i}> {name || ''} {author || ''} {page || ''} {totalPages || ''} </li>)
         })
 
 
         return (<div className="BookShelf">
-            <h1>Books I'm currently reading and cannot finish</h1>
+            <h1>Books I'm currently reading</h1>
             <ol>
                 {bookShelf}
             </ol>

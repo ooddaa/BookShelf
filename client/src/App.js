@@ -15,19 +15,17 @@ function App() {
   //   console.log('window loaded')
   // })
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <Header />
-    //     <Main version="666" />
-    //   </header>
-    // </div>
-    // <div className="root">
-
-    // </div>
     <div className="App">
-      <Oda />
-      <Books />
+      <header className="App-header">
+        <Header />
+      </header>
+      <div className="App">
+        <Oda />
+        <Books />
+      </div>
     </div>
+
+
   );
 }
 

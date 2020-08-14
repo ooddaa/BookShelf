@@ -15,11 +15,9 @@ class Header extends Component {
 
     render() {
         return (
-            <div className="Header">
-                <button onClick={this.changeState1}>
-                    {this.state.btn_name}
-                </button>
-            </div>
+            <header class="site-header">
+
+            </header>
         );
     };
 }
