@@ -8,49 +8,37 @@ import Main from './main/main';
 import Header from './header/header';
 import Game from './tictactoe/tictactoe.js';
 import Oda from './oda/oda.js';
+import Clock from './clock/clock.js';
 import Books from './books/books.js';
+import AddBook from './AddBook/AddBook.js';
 
 function App() {
-  // window.onload(function () {
-  //   console.log('window loaded')
-  // })
   return (
-    <div className="App">
-      <header className="App-header">
-        <Header />
-      </header>
+    <div className="container">
       <div className="App">
-        <Oda />
-        <Books />
+        <div className="header">
+          <Header />
+        </div>
+        <div className="oda-header">
+          <Oda />
+        </div>
+        <div className="content">
+          <div className="App">
+            <div className="nav">
+              <div className="clock-wrapper">
+                <Clock delay="1000" />
+              </div>
+            </div>
+            <div className="main">
+              <Books />
+            </div>
+
+
+          </div>
+        </div>
       </div>
     </div>
-
-
   );
 }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//           |
-//           NNNNNNNN
-//         </p>
-//         <p> asdasldkahsl </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           CHANGED
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;

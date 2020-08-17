@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  background-color: palegoldenrod;
+}
+.oda-header {
+  background-color: saddlebrown;
+}
+.content {
+  background-color: rosybrown;
+}
+
+.books-wrapper {
+  display: flex;
+  justify-content: left;
+  align-content: left;
+  
+}

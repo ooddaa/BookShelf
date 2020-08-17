@@ -15,8 +15,10 @@ class Header extends Component {
 
     render() {
         return (
-            <header class="site-header">
-
+            <header className="Header">
+                <button>First Button</button>
+                <button>Second Button</button>
+                <button>Third Button</button>
             </header>
         );
     };
