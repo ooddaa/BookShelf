@@ -32,7 +32,7 @@ class Clock extends React.Component {
     }
 
     render() {
-        return (<div className="Clock">
+        return (<div className="clock-wrapper">
             {this.state.clock.toLocaleTimeString()}
         </div>)
     }

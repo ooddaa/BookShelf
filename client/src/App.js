@@ -11,6 +11,7 @@ import Oda from './oda/oda.js';
 import Clock from './clock/clock.js';
 import Books from './books/books.js';
 import AddBook from './AddBook/AddBook.js';
+import Buffet from './Buffet/Buffet.js';
 
 function App() {
   return (
@@ -21,23 +22,21 @@ function App() {
         </div>
         <div className="oda-header">
           <Oda />
+          <Clock delay="1000" />
+        </div>
+        <div className="nav">
         </div>
         <div className="content">
-          <div className="App">
-            <div className="nav">
-              <div className="clock-wrapper">
-                <Clock delay="1000" />
-              </div>
-            </div>
-            <div className="main">
-              <Books />
-            </div>
-
-
+          <div className="main" style={{ justifyItems: "stretch" }}>
+            <Buffet />
+            <Books />
           </div>
+
+
+
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

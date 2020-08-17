@@ -65,7 +65,7 @@ class AddBook extends Component {
             <form name="addBookForm" onSubmit={this.handleSubmit}>
                 <label>
                     Name:
-            <input type="text" name="name" onChange={this.handleChange} />
+            <input type="text" name="name" onChange={this.handleChange} placeholder="Enter book title" />
                 </label>
                 <br></br>
                 <label>

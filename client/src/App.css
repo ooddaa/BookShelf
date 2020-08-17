@@ -37,6 +37,8 @@
   }
 }
 
+
+
 .header {
   background-color: palegoldenrod;
 }
@@ -47,9 +49,25 @@
   background-color: rosybrown;
 }
 
-.books-wrapper {
-  display: flex;
-  justify-content: left;
-  align-content: left;
-  
+
+.nested-misc-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1px;
+  grid-auto-rows: minmax(100px, auto);
 }
+.nested-misc-body > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: #be3939 1px solid; 
+  padding: 1em;
+}
+
+.height_70px { 
+  /* height: 7px; */
+  grid-auto-rows: 100px !important; 
+  /* grid-auto-rows: minmax(1000px, auto); */
+  font: red;
+}
+
+
