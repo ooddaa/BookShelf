@@ -53,6 +53,14 @@
 
 
 .img-dimmer {
-    transition: .5s;
-    filter: brightness(10%);
+    transition: 1s;
+    filter: brightness(50%);
+    background: red !important;
   }
+
+.img-box-shadow {
+  /* transition: 1s; */
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 5px, 5px, 5px grey;
+}

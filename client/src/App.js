@@ -4,12 +4,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Main from './main/main';
-import Header from './header/header';
-import Game from './tictactoe/tictactoe.js';
-import Oda from './oda/oda.js';
-import Clock from './clock/clock.js';
-import Books from './books/books.js';
+import Header from './Header/Header.js';
+// import Game from './tictactoe/tictactoe.js'; 
+import Oda from './Oda/Oda.js';
+import Clock from './Clock/Clock.js';
+import Books from './Books/Books.js';
 import AddBook from './AddBook/AddBook.js';
 import Buffet from './Buffet/Buffet.js';
 
@@ -17,13 +16,9 @@ function App() {
   return (
     <div className="container">
       <div className="App">
-        <div className="header">
-          <Header />
-        </div>
-        <div className="oda-header">
-          <Oda />
-          <Clock delay="1000" />
-        </div>
+        {/* <!-- <Header /> --> */}
+        <Oda />
+        <Clock delay="1000" />
         <div className="nav">
         </div>
         <div className="content">
@@ -31,9 +26,6 @@ function App() {
             <Buffet />
             <Books />
           </div>
-
-
-
         </div>
       </div>
     </div >

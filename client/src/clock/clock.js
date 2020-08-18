@@ -1,5 +1,5 @@
 import React from 'react';
-import './clock.css';
+import './Clock.css';
 
 class Clock extends React.Component {
     // we want a self-updating clock

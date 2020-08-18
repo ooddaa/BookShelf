@@ -1,6 +1,26 @@
 .Oda {
-    border: 2px solid grey;
+    --main-bg-color: #4DC9AE;
+    --box-shadow-h-offset: 5px;
+    --box-shadow-v-offset: 5px;
+    --box-shadow-blur: 5px;
+    --box-shadow-color: grey;
+    --main-padding: 15;
+}
+
+.Oda {
+    border: var(--border);
     text-align: center;
-    padding: 20px;
+    padding: calc(var(--main-padding, 10) * 1px);
+    /* margin: var(--main-header-margin); */
     margin: 10px;
+    /* background-color: saddlebrown; */
+    background-color: var(--main-bg-color, red);
+    color: var(--main-header-color);
+    box-shadow: 
+    var(--box-shadow-h-offset)
+    var(--box-shadow-v-offset)
+    var(--box-shadow-blur)
+    /* 10px */
+    var(--box-shadow-color)
+    /* inset */;
 }

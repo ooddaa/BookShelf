@@ -1,5 +1,5 @@
 // https://create-react-app.dev/docs/running-tests/
-import Books from './books'
+import Books from './Books'
 
 const books = new Books()
 it('first', () => {
